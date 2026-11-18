@@ -1,0 +1,46 @@
+{
+  "format_version": 1,
+  "topic": null,
+  "goal": {
+    "practical_use": "",
+    "target_capabilities": [],
+    "focus": null,
+    "background": "",
+    "constraints": "",
+    "interaction_preferences": {
+      "practice_pacing": "offer_followup",
+      "diagrams": "when_helpful"
+    }
+  },
+  "sources": [],
+  "concepts": [],
+  "objectives": [],
+  "phases": [],
+  "diagnostic": {
+    "strategy": "adaptive_rounds",
+    "status": "not_started",
+    "max_rounds": 5,
+    "max_questions": 20,
+    "questions_asked": 0,
+    "rounds": [],
+    "stop_reason": null,
+    "coverage_profile": [],
+    "question_bank": [],
+    "instruction_notes": [],
+    "unsampled_objective_ids": []
+  },
+  "sessions": [],
+  "attempts": [],
+  "weaknesses": [],
+  "review_queue": [],
+  "capstone": null,
+  "resume": {
+    "stage": "intake",
+    "phase_id": null,
+    "objective_id": null,
+    "pending_choice": null,
+    "pending_task": null,
+    "next_action": "Establish the topic, practical goal, available time, and progress workspace."
+  },
+  "updated_at": null
+}
