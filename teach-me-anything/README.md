@@ -31,7 +31,9 @@ across sessions.
 Learner-facing prompts use rendered Markdown, with code and logs fenced
 separately rather than the whole question. If a response dialog displays plain
 text, the formatted context stays in the conversation and the dialog collects
-only the answer using short, unformatted labels.
+only the answer using short, unformatted labels. Math rendering is checked
+separately from Markdown support; formulas default to readable plain text when
+math support is unavailable or unknown, rather than exposing raw LaTeX.
 
 Three successes establish initial mitigation under the chosen rubric, not a
 guarantee of permanent understanding. The skill distinguishes mitigation,

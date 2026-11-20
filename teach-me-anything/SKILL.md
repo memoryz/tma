@@ -31,7 +31,9 @@ available time, including unpredictable gaps between sessions.
 - Do not impose a calendar, attendance streaks, overdue work, or catch-up debt.
   Absence alone never resets success streaks or proves forgetting.
 - Keep learner records out of the reusable skill package. Do not silently upload,
-  publish, or commit them.
+  publish, or commit them. When improving the skill from session feedback, keep
+  the teaching rule, not the learner's example. Use synthetic examples in the
+  package and its tests; keep personalized examples in the learner's workspace.
 
 ## Learner-facing presentation
 
@@ -40,7 +42,6 @@ briefs, and feedback as rendered Markdown in the normal conversation. Use clear
 headings, short paragraphs, lists, and inline code where useful. Do not escape
 Markdown formatting, show a JSON/string representation, or wrap the entire
 prompt in a code block. Fence only actual code, logs, monospaced data, or diagrams.
-Use readable mathematical notation; avoid raw LaTeX delimiters if unsupported.
 
 Separate presentation from response collection. If a question dialog displays
 plain text, put the rich context and options in the Markdown conversation first.
@@ -50,6 +51,30 @@ answers through its question tool; do not bypass that tool by asking only in pro
 Keep option IDs and labels consistent across the rendered content and controls.
 If the host cannot render Markdown at all, use clean, readable plain text rather
 than claiming to have changed its renderer.
+
+### Mathematical notation
+
+Markdown support does not imply LaTeX/math rendering. Apply these rules to
+explanations, questions, answer options, feedback, and resumed prompts:
+
+- Use rendered mathematics only when the current surface's math support is
+  established by host documentation or confirmed rendering. Use its supported
+  inline and display delimiters; put display equations in their own paragraphs.
+  Do not escape or code-wrap formulas intended for math rendering.
+- If math support is unavailable or unknown, default to readable plain-text
+  formulas, not raw LaTeX commands or delimiters such as `\frac`,
+  `\(...\)`, `\[...\]`, `$...$`, or `$$...$$`. Do not assume that changing
+  delimiters or enabling Markdown fixes math rendering.
+- In plain text, use explicit multiplication, parentheses, and `^` for powers.
+  Preserve grouping in fractions and exponents, use readable symbol names, and
+  define unfamiliar notation. Short expressions may use inline code in the
+  conversation, but keep plain-text response dialogs free of Markdown markers.
+- Explain what the formula means, not just how to read its symbols.
+- Before sending, check every formula for unsupported syntax and ambiguous
+  grouping. If the learner reports broken formatting, re-present the affected
+  content using the plain-text fallback before continuing. Preserve question
+  IDs, exposure counts, and mastery evidence; a display repair is not a new
+  question or attempt. Do not claim visual verification without observing it.
 
 ## Supporting files
 
@@ -248,6 +273,18 @@ For each phase, repeat this loop in chunks that fit today's time:
 8. Give specific feedback: correct elements, the precise gap, why it matters,
    and a concrete next action.
 9. Update evidence, the weakness log, and the next teaching choice.
+
+**Keep the lesson moving in the same turn.** After grading an answer or finishing
+a worked example, give the learner something concrete to respond to before
+waiting. Name the recommended activity and offer to start it, clarify a step,
+or pause. Use the host's response tool when available. Saving a next
+action in the checkpoint is not a substitute for offering it to the learner.
+
+Treat "continue" as a request to take the recommended next step. If that step
+is practice, present the problem and wait for the answer; if it is an
+explanation, teach the new point and end with the next question or choice.
+Don't repeat feedback or ask permission a second time. If the learner pauses
+or the lesson is complete, give the wrap-up instead of another prompt.
 
 Reuse and refine a useful mental model rather than restarting the explanation
 for every scenario. Do not teach the answer before an untaught placement or

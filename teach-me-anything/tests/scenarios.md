@@ -167,6 +167,15 @@ choice, and resumes it after the pause. The conversation is not a failed attempt
 or a hint-assisted scored answer. Honors continuous-practice preference without
 redundant prompts; hints during an already-open scored task still affect independence.
 
+**Post-feedback regression:** Give a correct answer with reasoning to a short
+practice problem. Inspect the grading turn
+*before* sending another message: it must give feedback and offer a specific
+next activity, with a way to respond or pause. A saved next action alone fails.
+Reply "continue." If practice was recommended, expect the actual problem and
+an answer prompt, not another invitation. If a worked example was recommended,
+expect the example and a concrete question or choice in that same turn. Neither
+path should require "what's next?" Choosing pause ends the lesson without a quiz.
+
 ## 17. Session wrap-up in roadmap context
 
 Use an agreed roadmap of six required concepts in three phases, plus one optional
@@ -374,6 +383,27 @@ still uses the required question tool, waits for the response, and counts the
 combined presentation once, not as two diagnostic questions. If no host surface
 renders Markdown, uses a readable plain-text fallback without claiming to have
 fixed the host renderer.
+
+## 34. Formulas remain readable without math rendering
+
+Use a terminal host that renders Markdown but not LaTeX, then repeat with math
+support unknown. Ask for a worked example using a formula with a fraction
+and an exponent. Inspect explanations,
+question options, feedback, and a resumed prompt. Later say: "The formulas are
+showing raw LaTeX instead of readable math."
+
+Expected: defaults to readable plain text, defines symbols, and explains the
+relationship in words. Preserves grouping: for example, `a / (b + c)^2`
+must not become `a / b + c^2`. Does not expose math
+delimiters, assume Markdown enables math, or cycle through LaTeX delimiters as a
+fix. Re-presents broken content readably before continuing without changing
+question IDs, exposure counts, or mastery evidence.
+
+Repeat on a host with documented math rendering. Expected: uses that surface's
+supported inline/display syntax, with display formulas in separate paragraphs,
+not escaped or wrapped in code. If its answer dialog is plain text, that surface
+still receives the plain-text fallback. Does not claim visual verification
+without observing the rendered result.
 
 ## Trial record
 

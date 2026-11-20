@@ -22,8 +22,9 @@ standalone tutoring application.
   three previously learned gaps when available.
 
 Prompts use rendered Markdown rather than raw formatting inside plain-text
-dialogs. Three successes are a practical progress policy, not a guarantee of
-permanent mastery.
+dialogs. Formulas use supported math rendering or readable plain-text notation
+when math support is unavailable or unknown. Three successes are a practical
+progress policy, not a guarantee of permanent mastery.
 
 ## Quick start with GitHub Copilot CLI
 
